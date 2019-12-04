@@ -44,7 +44,7 @@ window.ReactNativeWebView.nativeLoginResponse = {
 `)
     }
 
-    let guardSrc = 'https://cdn.jsdelivr.net/npm/@authing/guard/dist/Guard.umd.min.js'
+    let guardSrc = 'http://cdn.jsdelivr.net/npm/@authing/guard/dist/Guard.umd.min.js'
     // let guardSrc = 'http://192.168.2.16:8082/dist/Guard.umd.min.js'
 
     let html = `
