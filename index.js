@@ -73,7 +73,12 @@ const guard = new Guard(${JSON.stringify(userPoolId)}, ${JSON.stringify(options)
 `
 
     async function loginByAlipay() {
-        const domain = options.host.oauth.replace('/graphql', '')
+        let domain = ""
+        if (options.host && options.host.oauth) {
+            domain = options.host.oauth.replace('/graphql', '')
+        } else {
+            domain = "https://oauth.authing.cn"
+        }
         const getAuthInfoUrl = `${domain}/oauth/alipaymobile/authinfo/${userPoolId}`
         const getUserInfoUrl = `${domain}/oauth/alipaymobile/redirect/${userPoolId}`
         let response = await fetch(getAuthInfoUrl)

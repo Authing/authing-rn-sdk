@@ -1,7 +1,7 @@
 {
   "name": "@authing/rn",
   "title": "Authing Rn Sdk",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Authing SDK for React Native",
   "main": "index.js",
   "scripts": {
