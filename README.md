@@ -254,7 +254,7 @@ Guard  支持高度自定义，可以通过 options 参数传入，如：
 />
 ```
 
-完整的参数请参考：[Guard 官方文档](完整的参数请参考：https://github.com/Authing/Guard#ui-%E5%AE%9A%E5%88%B6。)。
+完整的参数请参考：[Guard 官方文档](https://github.com/Authing/Guard#ui-%E5%AE%9A%E5%88%B6)。
 
 
 ## Author
