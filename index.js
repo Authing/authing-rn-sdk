@@ -9,7 +9,7 @@ const { AuthingRnSdk } = NativeModules;
 const Guard = ({
     userPoolId,
     options = {},
-    onLogin = (loginMethod, userInfo) => { },
+    onLogin = (userInfo) => { },
     onLoginError = error => { },
     onSocialLoad = socialList => { },
     onSocialUnload = error => { },
@@ -19,7 +19,6 @@ const Guard = ({
     onEmailSentError = error => { },
     onResetPassword = params => { },
     onResetPasswordError = error => { },
-    onGuardClosed = () => { }
 }) => {
     const guardRef = useRef(null)
     // 用户池信息
@@ -151,8 +150,7 @@ const guard = new Guard(${JSON.stringify(userPoolId)}, ${JSON.stringify(options)
                     // console.log(eventName, params)
                     switch (eventName) {
                         case "login":
-                            const loginMethod = params._loginMethod || null
-                            onLogin(loginMethod, params)
+                            onLogin(params)
                             break
                         case "login-error":
                             onLoginError(params)
