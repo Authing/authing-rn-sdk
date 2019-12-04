@@ -194,7 +194,9 @@ fetch('https://mywebsite.com/endpoint/', {
 
 ### 如何在后端检验 Token
 
-Authing 提供了几种方法帮助检验 token 的合法性和对应用户的登录状态（具体的方法请看：https://learn.authing.cn/authing/advanced/authentication/verify-jwt-token），开发者可以把这个方法封装成一个函数，比如说 check_authing_token_status（为了方便我使用了 Python ）：
+Authing 提供了几种方法帮助检验 token 的合法性和对应用户的登录状态，[文档点这里](https://learn.authing.cn/authing/advanced/authentication/verify-jwt-token)。
+
+开发者可以把这个方法封装成一个函数，比如说 check_authing_token_status（为了方便我使用了 Python ）：
 
 > 开发者不用在后端存储该 token，只需要调用 Authing 提供的接口。
 
