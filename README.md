@@ -196,7 +196,7 @@ fetch('https://mywebsite.com/endpoint/', {
 
 ### 如何在后端检验 Token
 
-Authing 提供了几种方法帮助检验 token 的合法性和对应用户的登录状态，[文档点这里](https://learn.authing.cn/authing/advanced/authentication/verify-jwt-token)。
+Authing 提供了几种方法帮助检验 token 的合法性和对应用户的登录状态，[文档点这里](https://docs.authing.cn/advanced/verify-jwt-token.html)。
 
 开发者可以把这个方法封装成一个函数，比如说 check_authing_token_status（为了方便我使用了 Python ）：
 
@@ -223,7 +223,7 @@ if not logged_in:
 ```
 
 ### 如何通过用户角色控制用户访问
-有时候是否登录这一个条件是不足以判断请求方是否有访问资源的权限的，为此 Authing 还提供了用户角色相关的 API。详情请查看[用户角色文档](https://learn.authing.cn/authing/advanced/roles)。
+有时候是否登录这一个条件是不足以判断请求方是否有访问资源的权限的，为此 Authing 还提供了用户角色相关的 API。详情请查看[实现基于角色的访问控制（RBAC）](https://docs.authing.cn/access-control/rbac.html)。
 
 ## 支持的回调函数列表
 
