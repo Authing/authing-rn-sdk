@@ -8,7 +8,7 @@ const { AuthingRnSdk } = NativeModules;
 
 const version = '2.3.5';
 
-const Guard = props => {
+const AuthingGuard = props => {
 	const { appId, options } = props;
 
 	const guardRef = useRef(null);
@@ -78,5 +78,5 @@ const Guard = props => {
 	);
 };
 module.exports = {
-	Guard
+	AuthingGuard
 };

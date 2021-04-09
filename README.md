@@ -50,12 +50,12 @@ cd ios && pod install
 
 ## 快速接入
 
-接入 Guard 非常简单，最简情况下，你只需要指定应用池 ID 和成功登录事件的回调函数即可！（完整的事件列表见下文）
+接入 AuthingGuard 非常简单，最简情况下，你只需要指定应用池 ID 和成功登录事件的回调函数即可！（完整的事件列表见下文）
 
 > 如果你对 Authing 用户池的概念不是很了解，可以先阅读基础概念文档。用户池 ID 可从 Authing 控制台中获取。
 
 ```js
-import { Guard } from '@authing/rn';
+import { AuthingGuard } from '@authing/rn';
 ```
 
 ```js
@@ -65,7 +65,7 @@ const onLogin = userInfo => {
 ```
 
 ```html
-<Guard appId="{appId}" onLogin="{onLogin}" />
+<AuthingGuard appId="{appId}" onLogin="{onLogin}" />
 ```
 
 下面是一个简单的完整示例：
@@ -73,7 +73,7 @@ const onLogin = userInfo => {
 ```js
 import React from 'react';
 import { SafeAreaView, StatusBar } from 'react-native';
-import { Guard } from '@authing/rn';
+import { AuthingGuard } from '@authing/rn';
 
 const App = () => {
 	const appId = '5dd77e6efa26f000d18101ca';
@@ -88,7 +88,7 @@ const App = () => {
 		<>
 			<StatusBar barStyle="dark-content" />
 			<SafeAreaView style={{ flex: 1 }}>
-				<Guard appId={appId} options={options} onLogin={onLogin} />
+				<AuthingGuard appId={appId} options={options} onLogin={onLogin} />
 			</SafeAreaView>
 		</>
 	);
@@ -227,10 +227,10 @@ if not logged_in:
 
 ## 自定义 UI
 
-Guard 支持高度自定义，可以通过 options 参数传入，如：
+AuthingGuard 支持高度自定义，可以通过 options 参数传入，如：
 
 ```jsx
-<Guard
+<AuthingGuard
 	userPoolId={userPoolId}
 	options={{
 		title: '你的应用名称',
@@ -256,7 +256,7 @@ body {
     background: #6699 !important;
 }
 `
-<Guard
+<AuthingGuard
   userPoolId={userPoolId}
   options={{
     css,
