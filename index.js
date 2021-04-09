@@ -9,7 +9,7 @@ const { AuthingRnSdk } = NativeModules;
 const version = '2.3.5';
 
 const Guard = props => {
-	const { appId = '5d70d0e991fdd597019df70d', options = {} } = props;
+	const { appId, options } = props;
 
 	const guardRef = useRef(null);
 
