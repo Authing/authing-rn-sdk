@@ -53,43 +53,43 @@ cd ios && pod install
 > 如果你对 Authing 用户池的概念不是很了解，可以先阅读基础概念文档。用户池 ID 可从 Authing 控制台中获取。
 
 ```js
-import { Guard } from "@authing/rn";
+import { Guard } from '@authing/rn';
 ```
 
 ```js
-const onLogin = (userInfo) => {
-  // deal with userInfo
+const onLogin = userInfo => {
+	// deal with userInfo
 };
 ```
 
 ```html
-<Guard userPoolId="{userPoolId}" onLogin="{onLogin}" />
+<Guard appId="{appId}" onLogin="{onLogin}" />
 ```
 
 下面是一个简单的完整示例：
 
 ```js
-import React from "react";
-import { SafeAreaView, StatusBar } from "react-native";
-import { Guard } from "@authing/rn";
+import React from 'react';
+import { SafeAreaView, StatusBar } from 'react-native';
+import { Guard } from '@authing/rn';
 
 const App = () => {
-  const userPoolId = "5dd77e6efa26f000d18101ca";
-  const options = {
-    title: "Authing Guard SDK",
-    forceLogin: true, // 将注册和登录合并，当用户不存在的时候为其自动注册
-  };
-  const onLogin = (loginMethod, userInfo) => {
-    alert(JSON.stringify(userInfo));
-  };
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView style={{ flex: 1 }}>
-        <Guard userPoolId={userPoolId} options={options} onLogin={onLogin} />
-      </SafeAreaView>
-    </>
-  );
+	const appId = '5dd77e6efa26f000d18101ca';
+	const options = {
+		title: 'Authing Guard SDK',
+		forceLogin: true // 将注册和登录合并，当用户不存在的时候为其自动注册
+	};
+	const onLogin = (loginMethod, userInfo) => {
+		alert(JSON.stringify(userInfo));
+	};
+	return (
+		<>
+			<StatusBar barStyle="dark-content" />
+			<SafeAreaView style={{ flex: 1 }}>
+				<Guard appId={appId} options={options} onLogin={onLogin} />
+			</SafeAreaView>
+		</>
+	);
 };
 
 export default App;
@@ -107,30 +107,32 @@ Android:
 npx react-native run-android
 ```
 
-用户成功登录之后 authing-rn-sdk 会将用户信息 `userInfo` 回调给传入的 `onLogin` 函数，用户信息中包含了 Authing 用户 ID、头像、昵称等，还包括登录凭证 `token`。`userInfo` 示例如下：
+用户成功登录之后 authing-rn-sdk 会将用户信息 `userInfo` 回调给传入的 `onLogin` 函数，`userInfo` 是一个数组类型,第一项是用户信息,用户信息中包含了 Authing 用户 ID、头像、昵称等，还包括登录凭证 `token`。`userInfo` 示例如下：
 
 ```json
-{
-  "_id": "5dc10bcb6f94c178c6ffffb9",
-  "email": null,
-  "emailVerified": false,
-  "unionid": "oiPbDuG4S7msrKHPKDc8MECSe8jM",
-  "openid": "oiPbDuG4S7msrKHPKDc8MECSe8jM",
-  "oauth": "{\"openid\":\"oiPbDuG4S7msrKHPKDc8MECSe8jM\",\"nickname\":\"廖长江\",\"sex\":1,\"language\":\"zh_CN\",\"city\":\"海淀\",\"province\":\"北京\",\"country\":\"中国\",\"headimgurl\":\"http://thirdwx.qlogo.cn/mmopen/vi_32/GkxYERPDdTMk7bOk3BgBmEEYul8oMcOoLgNHLoibZn5ibe4EulWBp1xo6uN4az59eoSBYBW0QmXB9TrsJEM0EoPw/132\",\"privilege\":[]}",
-  "registerMethod": "oauth:wxmp",
-  "username": "廖长江",
-  "nickname": "廖长江",
-  "company": "",
-  "photo": "https://usercontents.authing.cn/avatar-5dc10bcb6f94c178c6ffffb9-1572932555337",
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVuaW9uaWQiOiJvaVBiRHVHNFM3bXNyS0hQS0RjOE1FQ1NlOGpNIiwiaWQiOiI1ZGMxMGJjYjZmOTRjMTc4YzZmZmZmYjkiLCJjbGllbnRJZCI6IjVkYTdlZGFiNTAzOTZjMWFkOTYyMzc4YSJ9LCJpYXQiOjE1NzI5NTY0MjUsImV4cCI6MTU3NDI1MjQyNX0.OTgl72WZS8So3R5DbWCJ7I_Bd0LaZa4S0TAVMg9qaYQ",
-  "tokenExpiredAt": "11/20/2019, 8:20:25 PM",
-  "loginsCount": 43,
-  "lastLogin": "11/5/2019, 8:20:25 PM",
-  "lastIP": "127.0.0.1",
-  "signedUp": "11/5/2019, 1:42:35 PM",
-  "blocked": false,
-  "isDeleted": false
-}
+[
+	{
+		"id": "5dc10bcb6f94c178c6ffffb9",
+		"email": null,
+		"emailVerified": false,
+		"unionid": "oiPbDuG4S7msrKHPKDc8MECSe8jM",
+		"openid": "oiPbDuG4S7msrKHPKDc8MECSe8jM",
+		"oauth": "{\"openid\":\"oiPbDuG4S7msrKHPKDc8MECSe8jM\",\"nickname\":\"廖长江\",\"sex\":1,\"language\":\"zh_CN\",\"city\":\"海淀\",\"province\":\"北京\",\"country\":\"中国\",\"headimgurl\":\"http://thirdwx.qlogo.cn/mmopen/vi_32/GkxYERPDdTMk7bOk3BgBmEEYul8oMcOoLgNHLoibZn5ibe4EulWBp1xo6uN4az59eoSBYBW0QmXB9TrsJEM0EoPw/132\",\"privilege\":[]}",
+		"registerMethod": "oauth:wxmp",
+		"username": "廖长江",
+		"nickname": "廖长江",
+		"company": "",
+		"photo": "https://usercontents.authing.cn/avatar-5dc10bcb6f94c178c6ffffb9-1572932555337",
+		"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVuaW9uaWQiOiJvaVBiRHVHNFM3bXNyS0hQS0RjOE1FQ1NlOGpNIiwiaWQiOiI1ZGMxMGJjYjZmOTRjMTc4YzZmZmZmYjkiLCJjbGllbnRJZCI6IjVkYTdlZGFiNTAzOTZjMWFkOTYyMzc4YSJ9LCJpYXQiOjE1NzI5NTY0MjUsImV4cCI6MTU3NDI1MjQyNX0.OTgl72WZS8So3R5DbWCJ7I_Bd0LaZa4S0TAVMg9qaYQ",
+		"tokenExpiredAt": "11/20/2019, 8:20:25 PM",
+		"loginsCount": 43,
+		"lastLogin": "11/5/2019, 8:20:25 PM",
+		"lastIP": "127.0.0.1",
+		"signedUp": "11/5/2019, 1:42:35 PM",
+		"blocked": false,
+		"isDeleted": false
+	}
+]
 ```
 
 ### 如何携带 token
@@ -140,31 +142,31 @@ npx react-native run-android
 > 注意 Bearer 和 token 之间的空格
 
 ```js
-Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVuaW9uaWQiOiJvaVBiRHVHNFM3bXNyS0hQS0RjOE1FQ1NlOGpNIiwiaWQiOiI1ZGMxMGJjYjZmOTRjMTc4YzZmZmZmYjkiLCJjbGllbnRJZCI6IjVkYTdlZGFiNTAzOTZjMWFkOTYyMzc4YSJ9LCJpYXQiOjE1NzI5NTY0MjUsImV4cCI6MTU3NDI1MjQyNX0.OTgl72WZS8So3R5DbWCJ7I_Bd0LaZa4S0TAVMg9qaYQ";
+Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVuaW9uaWQiOiJvaVBiRHVHNFM3bXNyS0hQS0RjOE1FQ1NlOGpNIiwiaWQiOiI1ZGMxMGJjYjZmOTRjMTc4YzZmZmZmYjkiLCJjbGllbnRJZCI6IjVkYTdlZGFiNTAzOTZjMWFkOTYyMzc4YSJ9LCJpYXQiOjE1NzI5NTY0MjUsImV4cCI6MTU3NDI1MjQyNX0.OTgl72WZS8So3R5DbWCJ7I_Bd0LaZa4S0TAVMg9qaYQ';
 ```
 
 如果你使用的是 axios，可以这样写：
 
 ```js
-axios.get("https://mywebsite.com/endpoint/", {
-  headers: {
-    Authorization: `Bearer ${userInfo.token}`,
-  },
+axios.get('https://mywebsite.com/endpoint/', {
+	headers: {
+		Authorization: `Bearer ${userInfo[0].token}`
+	}
 });
 ```
 
 如果你使用的是 fetch，可以这样写：
 
 ```js
-fetch("https://mywebsite.com/endpoint/", {
-  method: "POST",
-  headers: {
-    Authorization: `Bearer ${userInfo.token}`,
-  },
-  body: JSON.stringify({
-    firstParam: "yourValue",
-    secondParam: "yourOtherValue",
-  }),
+fetch('https://mywebsite.com/endpoint/', {
+	method: 'POST',
+	headers: {
+		Authorization: `Bearer ${userInfo[0].token}`
+	},
+	body: JSON.stringify({
+		firstParam: 'yourValue',
+		secondParam: 'yourOtherValue'
+	})
 });
 ```
 
@@ -220,18 +222,18 @@ Guard 支持高度自定义，可以通过 options 参数传入，如：
 
 ```jsx
 <Guard
-  userPoolId={userPoolId}
-  options={{
-    title: "你的应用名称",
-    logo: "你的应用图标",
-    // 将注册和登录合并，如果用户不存在会自动创建并登录
-    forceLogin: true,
-    placeholder: {
-      // 自定义用户名输入框的 placeholder
-      username: "xxxxx",
-    },
-  }}
-  onLogin={onLogin}
+	userPoolId={userPoolId}
+	options={{
+		title: '你的应用名称',
+		logo: '你的应用图标',
+		// 将注册和登录合并，如果用户不存在会自动创建并登录
+		forceLogin: true,
+		placeholder: {
+			// 自定义用户名输入框的 placeholder
+			username: 'xxxxx'
+		}
+	}}
+	onLogin={onLogin}
 />
 ```
 
