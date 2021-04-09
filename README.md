@@ -213,6 +213,7 @@ if not logged_in:
 | onPwdEmailSend               | 忘记密码邮件发送成功             | data     | -                                                                        |
 | onPwdPhoneSend               | 忘记密码手机验证码发送成功       | data     | -                                                                        |
 | onLoginTabChange             | 登录 tab 切换事件                | data     | -                                                                        |
+| onRegisterInfoCompleted      | 注册补充成功事件                 | data     | -                                                                        |
 | onResetPasswordError         | 重置密码失败                     | `error`  | 错误信息                                                                 |
 | onRegisterError              | 用户注册失败                     | `error`  | 错误信息.                                                                |
 | onLoginError                 | 登录失败                         | `error`  | 错误信息。                                                               |
