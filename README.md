@@ -107,7 +107,7 @@ Android:
 npx react-native run-android
 ```
 
-用户成功登录之后 authing-rn-sdk 会将用户信息 `userInfo` 回调给传入的 `onLogin` 函数，`userInfo` 是一个数组类型,第一项是用户信息,用户信息中包含了 Authing 用户 ID、头像、昵称等，还包括登录凭证 `token`。`userInfo` 示例如下：
+用户成功登录之后 authing-rn-sdk 会将用户信息 `userInfo` 回调给传入的 `onLogin` 函数，`userInfo` 是数组类型，第一项是用户信息，用户信息中包含了 Authing 用户 ID、头像、昵称等，还包括登录凭证 `token`。`userInfo` 示例如下：
 
 ```json
 [
@@ -203,18 +203,23 @@ if not logged_in:
 
 ## 支持的回调函数列表
 
-| 回调函数             | 对应事件               | 参数      | 参数说明                                                                                       |
-| :------------------- | :--------------------- | :-------- | :--------------------------------------------------------------------------------------------- |
-| onLogin              | 成功登录               | userInfo  | 用户信息。                                                                                     |
-| onLoginError         | 登录失败               | `error`   | 错误信息。                                                                                     |
-| onSocialLoad         | 社会化登录列表加载完成 | oauthList | 完整的 OAuth 列表，若用户未在后台配置过则为空。注：Native 端只会显示 Native 应用的社会化登录。 |
-| onSocialUnload       | 社会化登录列表加载失败 | `error`   | 错误信息                                                                                       |
-| onRegister           | 用户注册成功           | userInfo  | 用户数据。和 onLogin 回调函数的 `userInfo` 参数一致，但是 `token` 为空。                       |
-| onRegisterError      | 用户注册失败           | `error`   | 错误信息.                                                                                      |
-| onEmailSent          | 忘记密码邮件发送成功   | data      | 发送的结果                                                                                     |
-| onEmailSentError     | 忘记密码邮件发送失败   | `error`   | 错误信息                                                                                       |
-| onResetPassword      | 重置密码成功           | data      | 重置密码结果                                                                                   |
-| onResetPasswordError | 重置密码失败           | `error`   | 错误信息                                                                                       |
+| 回调函数                     | 对应事件                         | 参数     | 参数说明                                                                 |
+| :--------------------------- | :------------------------------- | :------- | :----------------------------------------------------------------------- |
+| onLogin                      | 成功登录                         | userInfo | 用户信息。                                                               |
+| onRegister                   | 用户注册成功                     | userInfo | 用户数据。和 onLogin 回调函数的 `userInfo` 参数一致，但是 `token` 为空。 |
+| onResetPassword              | 重置密码成功                     | data     | 重置密码结果                                                             |
+| onRegisterTabChange          | 注册 tab 切换事件                | data     | 切换后的 tab                                                             |
+| onPwdReset                   | 密码重置成功事件                 | data     | -                                                                        |
+| onPwdEmailSend               | 忘记密码邮件发送成功             | data     | -                                                                        |
+| onPwdPhoneSend               | 忘记密码手机验证码发送成功       | data     | -                                                                        |
+| onLoginTabChange             | 登录 tab 切换事件                | data     | -                                                                        |
+| onResetPasswordError         | 重置密码失败                     | `error`  | 错误信息                                                                 |
+| onRegisterError              | 用户注册失败                     | `error`  | 错误信息.                                                                |
+| onLoginError                 | 登录失败                         | `error`  | 错误信息。                                                               |
+| onRegisterInfoCompletedError | 注册补充失败事件                 | `error`  | 错误信息。                                                               |
+| onPwdResetError              | 密码重置事件失败事件             | `error`  | 错误信息。                                                               |
+| onPwdPhoneSendError          | 手机号重置密码发送验证码失败事件 | `error`  | 错误信息。                                                               |
+| onPwdEmailSendError          | 邮箱重置密码发送验证码失败事件   | `error`  | 错误信息。                                                               |
 
 ## 自定义 UI
 
