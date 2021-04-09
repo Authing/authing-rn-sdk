@@ -1,39 +1,39 @@
 {
-  "name": "@authing/rn",
-  "title": "Authing Rn Sdk",
-  "version": "1.0.3",
-  "description": "Authing SDK for React Native",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Authing/authing-rn-sdk.git",
-    "baseUrl": "https://github.com/Authing/authing-rn-sdk"
-  },
-  "keywords": [
-    "react-native",
-    "authing",
-    "idaas",
-    "alipay"
-  ],
-  "author": {
-    "name": "liaochangjiang",
-    "email": "cj@authing.cn"
-  },
-  "license": "MIT",
-  "licenseFilename": "LICENSE",
-  "readmeFilename": "README.md",
-  "peerDependencies": {
-    "react": "^16.8.1",
-    "react-native": ">=0.59.0-rc.0 <1.0.x"
-  },
-  "devDependencies": {
-    "react": "^16.8.3",
-    "react-native": "^0.59.10"
-  },
-  "dependencies": {
-    "query-string": "^6.9.0"
-  }
+	"name": "@authing/rn",
+	"title": "Authing Rn Sdk",
+	"version": "2.0.0",
+	"description": "Authing SDK for React Native",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Authing/authing-rn-sdk.git",
+		"baseUrl": "https://github.com/Authing/authing-rn-sdk"
+	},
+	"keywords": [
+		"react-native",
+		"authing",
+		"idaas",
+		"alipay"
+	],
+	"author": {
+		"name": "liaochangjiang",
+		"email": "cj@authing.cn"
+	},
+	"license": "MIT",
+	"licenseFilename": "LICENSE",
+	"readmeFilename": "README.md",
+	"peerDependencies": {
+		"react": "^16.8.1",
+		"react-native": ">=0.59.0-rc.0 <1.0.x"
+	},
+	"devDependencies": {
+		"react": "^16.8.3",
+		"react-native": "^0.59.10"
+	},
+	"dependencies": {
+		"query-string": "^6.9.0"
+	}
 }
