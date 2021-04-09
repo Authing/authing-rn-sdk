@@ -21,6 +21,8 @@
 - [x] 支付宝
 - [ ] 微信 -->
 
+<img height="500px" src="https://authing-files.oss-cn-zhangjiakou.aliyuncs.com/authing-blog/rn-demo.jpeg" alt="" style="display:block;margin: 0 auto;"/>
+
 ## 安装
 
 > 注：authing-rn-sdk 的 npm 包名称为 @authing/rn
