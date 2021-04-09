@@ -206,6 +206,7 @@ if not logged_in:
 | 回调函数                     | 对应事件                         | 参数     | 参数说明                                                                 |
 | :--------------------------- | :------------------------------- | :------- | :----------------------------------------------------------------------- |
 | onLogin                      | 成功登录                         | userInfo | 用户信息。                                                               |
+| onLoad                       | Authing appId 验证通过，加载完成 | data     | AuthenticationClient 对象                                                |
 | onRegister                   | 用户注册成功                     | userInfo | 用户数据。和 onLogin 回调函数的 `userInfo` 参数一致，但是 `token` 为空。 |
 | onResetPassword              | 重置密码成功                     | data     | 重置密码结果                                                             |
 | onRegisterTabChange          | 注册 tab 切换事件                | data     | 切换后的 tab                                                             |
@@ -214,13 +215,13 @@ if not logged_in:
 | onPwdPhoneSend               | 忘记密码手机验证码发送成功       | data     | -                                                                        |
 | onLoginTabChange             | 登录 tab 切换事件                | data     | -                                                                        |
 | onRegisterInfoCompleted      | 注册补充成功事件                 | data     | -                                                                        |
-| onResetPasswordError         | 重置密码失败                     | `error`  | 错误信息                                                                 |
 | onRegisterError              | 用户注册失败                     | `error`  | 错误信息.                                                                |
 | onLoginError                 | 登录失败                         | `error`  | 错误信息。                                                               |
 | onRegisterInfoCompletedError | 注册补充失败事件                 | `error`  | 错误信息。                                                               |
 | onPwdResetError              | 密码重置事件失败事件             | `error`  | 错误信息。                                                               |
 | onPwdPhoneSendError          | 手机号重置密码发送验证码失败事件 | `error`  | 错误信息。                                                               |
 | onPwdEmailSendError          | 邮箱重置密码发送验证码失败事件   | `error`  | 错误信息。                                                               |
+| onLoadError                  | Authing appId 验证失败事件       | `error`  | 错误信息。                                                               |
 
 ## 自定义 UI
 
