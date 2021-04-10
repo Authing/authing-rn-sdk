@@ -26,7 +26,7 @@ const AuthingGuard = props => {
 	script.type= 'text/javascript';
 	script.onreadystatechange= function () {}
 	script.onload= function(){
-		var guard = new AuthingNativeJsUIComponents.AuthingGuard('${appId}')
+		var guard = new AuthingNativeJsUIComponents.AuthingGuard('${appId}',${options})
 		// 事件监听
 		guard.on('load', (authClient) => console.log(authClient))
 		// 发送事件
