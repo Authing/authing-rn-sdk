@@ -13,10 +13,7 @@ const AuthingGuard = props => {
 
 	const guardRef = useRef(null);
 
-	// 写死的配置项，不管开发者怎么设置，不然会出问题
-	options.hideClose = true;
-	options.isNative = true;
-	options.isSSO = false;
+	let _obj = { ...options, hideClose: true, isNative: true, isSSO: false };
 
 	let staticHtmlHead = `
 	<link href='https://cdn.jsdelivr.net/npm/@authing/native-js-ui-components@${version}/lib/index.min.css' rel='stylesheet' ></link>`;
@@ -26,7 +23,7 @@ const AuthingGuard = props => {
 	script.type= 'text/javascript';
 	script.onreadystatechange= function () {}
 	script.onload= function(){
-		var guard = new AuthingNativeJsUIComponents.AuthingGuard('${appId}',${options})
+		var guard = new AuthingNativeJsUIComponents.AuthingGuard('${appId}',${JSON.stringify(_obj)})
 		// 事件监听
 		guard.on('load', (authClient) => console.log(authClient))
 		// 发送事件

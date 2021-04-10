@@ -246,6 +246,7 @@ AuthingGuard 支持高度自定义，可以通过 options 参数传入，如：
 />
 ```
 
+<!--
 ### 加入自定义 CSS
 
 authing-rn-sdk 还支持通过 `options.css` 传入自定义 CSS 样式，这使得开发者可以高度自定义表单样式。如果指定了 `options.css`，会在 DOM 的 head 中插入一个 `<style type="text/css"></style>` 节点。 示例：
@@ -267,4 +268,4 @@ body {
 
 效果如图所示：
 
-<img height="500px" src="http://lcjim-img.oss-cn-beijing.aliyuncs.com/2019-12-06-100834.png" alt="" style="display:block;margin: 0 auto;"/>
+<img height="500px" src="http://lcjim-img.oss-cn-beijing.aliyuncs.com/2019-12-06-100834.png" alt="" style="display:block;margin: 0 auto;"/> -->
