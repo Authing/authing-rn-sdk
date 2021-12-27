@@ -1,5 +1,9 @@
 # SDK for React Native
 
+<div align=center><img src="https://files.authing.co/authing-console/authing-logo-new-20210924.svg"></div>
+
+<br/>
+
 #### 🏠 [Homepage](https://github.com/Authing/authing-rn-sdk)
 
 <!-- Authing 支持 React Native 移动端开发移动端，使得开发者可以快速接入支付宝、微信等 APP 登录，以及免代码开发支持邮箱密码、用户名密码、手机验证码登录。
@@ -269,3 +273,13 @@ body {
 效果如图所示：
 
 <img height="500px" src="http://lcjim-img.oss-cn-beijing.aliyuncs.com/2019-12-06-100834.png" alt="" style="display:block;margin: 0 auto;"/> -->
+
+## 参与贡献
+- Fork it
+- Create your feature branch (git checkout -b my-new-feature)
+- Commit your changes (git commit -am 'Add some feature')
+- Push to the branch (git push origin my-new-feature)
+- Create new Pull Request
+## 获取帮助
+
+Join us on forum: [#authing-chat](https://forum.authing.cn/)
