@@ -41,8 +41,10 @@ const AuthingGuard = props => {
 
 	const injectGuardOptions = `
 	window.ReactNativeWebView.html={
-		head:\`${staticHtmlHead}\`,
-		$script:\`${staticScript}\`
+		document.head.insertAdjacentHTML('beforeend', \`${staticHtmlHead}\`);
+		var scriptEl = document.createElement('script');
+        scriptEl.innerHTML = \`${staticScript}\`;
+        document.head.appendChild(scriptEl);
 	}
 `;
 	return (
